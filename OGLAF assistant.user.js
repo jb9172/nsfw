@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OGLAF assistant
 // @namespace    https://www.oglaf.com/
-// @version      0.5
+// @version      0.6
 // @description  Navigate the OGLAF comic with arrow keys, show title and alt text, highlight epilogue button.
 // @author       Anon
 // @match        https://www.oglaf.com/*
@@ -44,6 +44,10 @@
     }
 
     let strip = document.getElementById("strip");
+    if (!strip) {
+        return;
+    }
+
     let title = strip.getAttribute("title");
     let alt = strip.getAttribute("alt");
     let ad_btm = document.getElementById("ad_btm");

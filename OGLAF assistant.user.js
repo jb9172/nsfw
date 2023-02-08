@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OGLAF assistant
 // @namespace    https://www.oglaf.com/
-// @version      0.4
+// @version      0.5
 // @description  Navigate the OGLAF comic with arrow keys, show title and alt text, highlight epilogue button.
 // @author       Anon
 // @match        https://www.oglaf.com/*
@@ -15,7 +15,10 @@
     function extra() {
         let patreon_link = document.querySelector('a.patreon');
         let extra_link = patreon_link.nextSibling;
-        if (extra_link.tagName === "A" && extra_link.href && extra_link.href !== document.location.href) {
+        if (extra_link.tagName === "A" && extra_link.href &&
+            extra_link.href !== document.location.href &&
+            extra_link.href.startsWith("https://www.oglaf.com/") &&
+            !extra_link.href.match(/\/None$/)) {
             return extra_link;
         }
         return null;
@@ -45,7 +48,10 @@
     let alt = strip.getAttribute("alt");
     let ad_btm = document.getElementById("ad_btm");
 
-    ad_btm.innerHTML = "";
+    if (ad_btm.innerHTML !== "") {
+        ad_btm.append(document.createElement('br'));
+        ad_btm.append(document.createElement('br'));
+    }
 
     if (title) {
         ad_btm.append(document.createTextNode(title));

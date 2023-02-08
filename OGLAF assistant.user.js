@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         OGLAF assistant
 // @namespace    https://www.oglaf.com/
-// @version      0.3
-// @description  Navigate the OGLAF comic with arrow keys, show title text, alt text, epilogue button under the image.
+// @version      0.4
+// @description  Navigate the OGLAF comic with arrow keys, show title and alt text, highlight epilogue button.
 // @author       Anon
 // @match        https://www.oglaf.com/*
 // @grant        none

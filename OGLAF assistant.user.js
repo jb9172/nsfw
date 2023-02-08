@@ -6,6 +6,7 @@
 // @author       Anon
 // @match        https://www.oglaf.com/*
 // @grant        none
+// @license      MIT
 // ==/UserScript==
 
 (function() {
